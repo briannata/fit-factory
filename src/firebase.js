@@ -1,21 +1,68 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth,
+    signInWithPopup,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    signOut,
+   } from "firebase/auth";
+   import {
+    getFirestore,
+    query,
+    getDocs,
+    collection,
+    where,
+    addDoc
+   } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: dotenv.API_KEY,
-  authDomain: dotenv.AUTH_DOMAIN,
-  projectId: dotenv.PROJECT_ID,
-  storageBucket: dotenv.STORAGE_BUCKET,
-  messagingSenderId: dotenv.MESSAGING_SENDER_ID,
-  appId: dotenv.APP_ID,
-  measurementId: dotenv.MEASUREMENT_ID
-};
+   const firebaseConfig = {
+    apiKey: "AIzaSyCF9TerHVai0UEjiYsvThAd4lueL7C1FZ0",
+    authDomain: "fit-factory-a3669.firebaseapp.com",
+    databaseURL: "https://fit-factory-a3669-default-rtdb.firebaseio.com",
+    projectId: "fit-factory-a3669",
+    storageBucket: "fit-factory-a3669.appspot.com",
+    messagingSenderId: "618067257688",
+    appId: "1:618067257688:web:ecd38e80e0966eba535d2d",
+    measurementId: "G-PJM28K42JB"
+  };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const logInWithEmailAndPassword = async (email, password) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const registerWithEmailAndPassword = async (name, email, password) => {
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(collection(db, "users"), {
+      uid: user.uid,
+      name,
+      authProvider: "local",
+      email,
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const logout = () => {
+  signOut(auth);
+};
+
+export {
+  auth,
+  db,
+  logInWithEmailAndPassword,
+  registerWithEmailAndPassword,
+  logout,
+};
