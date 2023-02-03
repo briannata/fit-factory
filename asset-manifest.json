@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fit-factory/static/css/main.5c4dd3a9.css",
+    "main.js": "/fit-factory/static/js/main.1add878a.js",
+    "static/js/787.fd3ef4ca.chunk.js": "/fit-factory/static/js/787.fd3ef4ca.chunk.js",
+    "index.html": "/fit-factory/index.html",
+    "main.5c4dd3a9.css.map": "/fit-factory/static/css/main.5c4dd3a9.css.map",
+    "main.1add878a.js.map": "/fit-factory/static/js/main.1add878a.js.map",
+    "787.fd3ef4ca.chunk.js.map": "/fit-factory/static/js/787.fd3ef4ca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c4dd3a9.css",
+    "static/js/main.1add878a.js"
+  ]
+}
