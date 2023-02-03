@@ -7,6 +7,11 @@ function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const signIn = async (email, password) => {
+        const uid = await logInWithEmailAndPassword(email, password);
+        window.location = '/dashboard/' + uid;
+    }
+
 return (
     <div>
         <header id="header" class="header fixed-top" data-scrollto-offset="0">

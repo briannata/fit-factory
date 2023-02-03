@@ -8,9 +8,9 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
 
-    const signUpUser = (name, email, password) => {
-        window.location = '/dashboard';
-        registerWithEmailAndPassword(name, email, password);
+    const signUpUser = async (name, email, password) => {
+        const uid = await registerWithEmailAndPassword(name, email, password);
+        window.location = '/dashboard/' + uid;
     }
 
 return (

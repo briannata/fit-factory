@@ -1,0 +1,41 @@
+[debug] [2022-09-18T23:26:08.135Z] ----------------------------------------------------------------------
+[debug] [2022-09-18T23:26:08.137Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-18T23:26:08.138Z] CLI Version:   11.9.0
+[debug] [2022-09-18T23:26:08.138Z] Platform:      win32
+[debug] [2022-09-18T23:26:08.138Z] Node Version:  v16.13.1
+[debug] [2022-09-18T23:26:08.139Z] Time:          Sun Sep 18 2022 19:26:08 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-09-18T23:26:08.139Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-18T23:26:08.283Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-18T23:26:08.283Z] > authorizing via signed-in user (brianna.hy.ta@gmail.com)
+[debug] [2022-09-18T23:26:08.283Z] [iam] checking project fit-factory-a3669 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-18T23:26:08.286Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fit-factory-a3669:testIamPermissions [none]
+[debug] [2022-09-18T23:26:08.286Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fit-factory-a3669:testIamPermissions x-goog-quota-user=projects/fit-factory-a3669
+[debug] [2022-09-18T23:26:08.286Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fit-factory-a3669:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-18T23:26:08.587Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fit-factory-a3669:testIamPermissions 200
+[debug] [2022-09-18T23:26:08.587Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fit-factory-a3669:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-18T23:26:08.587Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fit-factory-a3669/serviceAccounts/fit-factory-a3669@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-09-18T23:26:08.588Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fit-factory-a3669/serviceAccounts/fit-factory-a3669@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-09-18T23:26:08.975Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fit-factory-a3669/serviceAccounts/fit-factory-a3669@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2022-09-18T23:26:08.976Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fit-factory-a3669/serviceAccounts/fit-factory-a3669@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2022-09-18T23:26:08.976Z] [functions] service account IAM check errored, deploy may fail:HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, Unknown service account","status":404}
+[debug] [2022-09-18T23:26:08.977Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fit-factory-a3669 [none]
+[debug] [2022-09-18T23:26:09.202Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fit-factory-a3669 200
+[debug] [2022-09-18T23:26:09.202Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fit-factory-a3669 {"projectId":"fit-factory-a3669","projectNumber":"618067257688","displayName":"Fit Factory","name":"projects/fit-factory-a3669","resources":{"hostingSite":"fit-factory-a3669","realtimeDatabaseInstance":"fit-factory-a3669-default-rtdb"},"state":"ACTIVE","etag":"1_f36e1a24-e61e-4f7c-b9cd-6cae1eff7f03"}
+[info] 
+[info] === Deploying to 'fit-factory-a3669'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[debug] [2022-09-18T23:26:09.206Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:371:5)
+    at validateString (node:internal/validators:119:11)
+    at Object.join (node:path:429:7)
+    at Config.path (C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:123:45)
+    at getChildEnvironment (C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:51:49)
+    at runTargetCommands (C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:72:14)
+    at C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:124:24
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async chain (C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:33:9)
+    at async deploy (C:\Users\Brianna\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:67:5)
+[error] 
+[error] Error: An unexpected error has occurred.

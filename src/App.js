@@ -14,7 +14,7 @@ return (
             <Route path='/' element={<Home />} />
             <Route path='/sign-in' element={<SignIn/>} />
             <Route path='/sign-up' element={<SignUp/>} />
-            <Route path='/dashboard' element={<Dashboard/>} />
+            <Route path='/dashboard/:id' element={<Dashboard/>} />
         </Routes>
     </Router>
 );
